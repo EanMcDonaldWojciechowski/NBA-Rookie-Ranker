@@ -1,4 +1,4 @@
-import nba_api.stats as nba
+from nba_api.stats.endpoints import commonplayerinfo
 
-player_info = nba.commonplayerinfo.CommonPlayerInfo(player_id=2544)
+player_info = commonplayerinfo.CommonPlayerInfo(player_id=2544)
 print(player_info)
