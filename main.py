@@ -13,19 +13,28 @@ playerDataHeader = parsed_player.get("resultSets")[0]['headers']
 
 # SET COLUMNS LATER
 listOfRookieID = []
+TrainingDataRookieIDs = []
 
 #playerStats = []
 for playerInfo in playerdata:
     # playerInfo[4] is year started playing
     if playerInfo[4] == '2018':
         # set key in dict equal to player ID, value to rest of player info
-        listOfRookieID.append(playerInfo[0])    
+        listOfRookieID.append(playerInfo[0])        
+    elif playerInfo[4] != '2018':
+        TrainingDataRookieIDs.append(playerInfo[0])
 
-
+print(len(TrainingDataRookieIDs))
 listOfRookieStatsObj = []
 player_stat_json = []
 player_stat_parsed = []
+
+TrainingRookieStatsObj = []
+TrainingPlayer_stat_json = []
+TrainingPlayer_stat_parsed = []
+
 RookieStats2018 = []
+TrainingRookieStats = []
 listOfRookieStatHeader = []
 
 
