@@ -36,7 +36,7 @@ for idx in enumerate(TrainingDataIDs):
     elif (len(TrainingPlayer_stat_parsed[idx[0]].get("resultSets")[0]['rowSet']) >= 1):
         TrainingStats.append(TrainingPlayer_stat_parsed[idx[0]].get("resultSets")[0]['rowSet'][0])
     print(TrainingStats[idx[0]])
-    if idx[0] > 300:
+    if idx[0] > 500:
         break
     print(TrainingDataIDs[idx[0]])    
 
