@@ -3,22 +3,21 @@ import json
 import pandas as pd
 import time
 
-player_info = commonallplayers.CommonAllPlayers()
-player_json = player_info.get_json()
-parsed_player = json.loads(player_json)
+rawPlayerData = commonallplayers.CommonAllPlayers()
+playerJsonData = rawPlayerData.get_json()
+parsedPlayerJson = json.loads(playerJsonData)
 
-playerdata = parsed_player.get("resultSets")[0]['rowSet']
-playerDataHeader = parsed_player.get("resultSets")[0]['headers']
+allPlayerData = parsedPlayerJson.get("resultSets")[0]['rowSet']
+playerDataHeader = parsedPlayerJson.get("resultSets")[0]['headers']
 
-# SET COLUMNS LATER
-listOfRookieID = []
 
-#playerStats = []
-for playerInfo in playerdata:
+playerIDs = []
+
+for playerInfo in allPlayerData:
     # playerInfo[4] is year started playing
     if playerInfo[4] == '2018':
         # set key in dict equal to player ID, value to rest of player info
-        listOfRookieID.append(playerInfo[0])        
+        playerIDs.append(playerInfo[0])        
 
 listOfRookieStatsObj = []
 player_stat_json = []
