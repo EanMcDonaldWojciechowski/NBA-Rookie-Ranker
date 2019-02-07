@@ -3,7 +3,7 @@ import json
 import pandas as pd
 import time
 
-#collecting and parsing all player data to collect player IDs
+# collecting and parsing all player data to collect player IDs
 rawPlayerData = commonallplayers.CommonAllPlayers()
 playerJsonData = rawPlayerData.get_json()
 parsedPlayerJson = json.loads(playerJsonData)
@@ -16,9 +16,9 @@ playerIDs = []
 for playerInfo in allPlayerData:
     # playerInfo[4] is year started playing    
     if playerInfo[4] != '2018':
+        # set key in dict equal to player ID, value to rest of player info
         playerIDs.append(playerInfo[0])
-
-       
+    
 rawPlayerStats = []
 playerStatJson = []
 playerStatParsed = []
